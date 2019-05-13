@@ -8,12 +8,13 @@ ENV S6_VERSION=v1.21.7.0 \
     GOSS_SHA256=53dd1156ab66f2c4275fd847372e6329d895cfb2f0bcbec5f86c1c4df7236dde
 
 # Ensure scripts are available for use in next command
-COPY ./container/root/scripts/* /scripts/
+#COPY ./container/root/scripts/* /scripts/
 
 # - Symlink variant-specific scripts to default location
 # - Upgrade base security packages, then clean packaging leftover
 # - Add S6 for zombie reaping, boot-time coordination, signal transformation/distribution: @see https://github.com/just-containers/s6-overlay#known-issues-and-workarounds
 # - Add goss for local, serverspec-like testing
+
 RUN /bin/bash -e /scripts/ubuntu_apt_cleanmode.sh && \
     ln -s /scripts/clean_ubuntu.sh /clean.sh && \
     ln -s /scripts/security_updates_ubuntu.sh /security_updates.sh && \
