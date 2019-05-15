@@ -3,6 +3,7 @@ kind: ReplicationController
 metadata:
   name: pod-python
 spec:
+  replicas: 2
   selector:
     app: pod-python
   template:
