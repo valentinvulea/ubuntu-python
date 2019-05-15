@@ -4,7 +4,11 @@ metadata:
   name: pod-python
   namespace: pod-test
 spec:
+  replicas: 1
   containers:
   - name: ubuntu-python
     image: doublev20/valentin:version3
- 
+    ports:
+    - containerPort: 8080
+    command: ['sh', '-c', 'echo Hello Kubernetes! && sleep 3600']
+    
