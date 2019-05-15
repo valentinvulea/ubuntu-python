@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: ubuntu-python
-       image: doublev20/valentin:version3
-       ports:
-      - containerPort: 8080
+        image: doublev20/valentin:version3
+        ports:
+        - containerPort: 8080
