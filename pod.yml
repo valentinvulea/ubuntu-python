@@ -4,8 +4,6 @@ metadata:
   name: pod-python
   namespace: pod-test
 spec:
-  selector:
-    app: pod-python
   containers:
   - name: ubuntu-python
     image: doublev20/valentin:version3
