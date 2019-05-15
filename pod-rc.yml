@@ -12,7 +12,7 @@ spec:
         app: pod-python
     spec:
       containers:
-       - name: ubuntu-python
+      - name: ubuntu-python
        image: doublev20/valentin:version3
        ports:
-       - containerPort: 8080
+      - containerPort: 8080
