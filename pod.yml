@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-python
+  namespace: pod-test
+spec:
+  containers:
+  - name: ubuntu-python
+    image: doublev20/valentin:version3
+  replicas: 2
+  selector:
+    matchLabels:
+      name: pod-test
+  template:
+    metadata:
+      labels:
+        name: ubuntu-python
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: ubuntu-python
+        image: doublev20/valentin:version3
