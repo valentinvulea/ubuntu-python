@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: pod-python
+spec:
+  selector:
+    app: pod-python
+  template:
+    metadata:
+      labels:
+        app: pod-python
+    spec:
+      containers:
+       - name: ubuntu-python
+       image: doublev20/valentin:version3
+       ports:
+       - containerPort: 8080
